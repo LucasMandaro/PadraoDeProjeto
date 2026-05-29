@@ -31,7 +31,7 @@ public class PedidoTest {
     }
 
     @Test
-    public void devecancelarPedidoPendente(){
+    public void deveCancelarPedidoPendente(){
         pedido.setEstado(PedidoEstadoPendente.getInstance());
         assertTrue(pedido.cancelado());
         assertEquals(PedidoEstadoCancelado.getInstance(), pedido.getEstado());
@@ -86,7 +86,7 @@ public class PedidoTest {
     }
 
     @Test
-    public void naoDeveEntragarPedidoAceito(){
+    public void naoDeveEntregarPedidoAceito(){
         pedido.setEstado(PedidoEstadoAceito.getInstance());
         assertFalse(pedido.entregue());
     }
@@ -113,7 +113,7 @@ public class PedidoTest {
     }
 
     @Test
-    public void naoDeveMudarDeSaiuParaEntregaParaPendante(){
+    public void naoDeveMudarDeSaiuParaEntregaParaPendente(){
         pedido.setEstado(PedidoEstadoSaiuParaEntrega.getInstance());
         assertFalse(pedido.pendente());
     }
